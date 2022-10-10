@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import UserManager
 
 from MatchBookBack.abstracts.base_models import BaseModel
 
@@ -13,3 +14,8 @@ class User(AbstractBaseUser, BaseModel):
     password = models.CharField(max_length=255, verbose_name='Senha')
     latitude = models.DecimalField(max_digits=9, decimal_places=6, verbose_name='Latitude')
     longitude = models.DecimalField(max_digits=9, decimal_places=6, verbose_name='Longitude')
+
+    objects = UserManager()
+
+    class Meta():
+        app_label = 'authentication'
