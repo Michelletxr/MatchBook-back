@@ -1,13 +1,16 @@
+from tabnanny import verbose
 from django.db import models
 from MatchBookBack.abstracts.base_models import BaseModel
 from django.utils.translation import gettext_lazy as _
-#from authentication.models import User
+from authentication.models import User
 # Create your models here.
 
 class Book(BaseModel):
     name = models.CharField(max_length=255, verbose_name=_('Nome'))
     author = models.CharField(max_length=255, verbose_name=_('Autor'))
-   # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name = _('Usuário'))
+    lauch_date = models.DateTimeField()
+    sinopse = models.TextField()
 
     class Meta: 
         app_label = 'book'
