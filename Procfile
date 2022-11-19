@@ -1,1 +1,1 @@
-web: gunicorn 'MatchBookBack.wsgi'
+web: python manage.py migrate && gunicorn 'MatchBookBack.wsgi'
