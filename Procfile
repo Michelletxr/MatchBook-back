@@ -1,1 +1,1 @@
-web: gunicorn 'match-book-back.wsgi'
+web: gunicorn 'MatchBookBack.wsgi'
