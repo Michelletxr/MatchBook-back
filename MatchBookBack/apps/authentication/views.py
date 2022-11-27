@@ -30,9 +30,6 @@ class UserImageUploadView(APIView):
             return Response({'error': 'Invalid image'}, status=400)
 
         image = image_request.file.read()
-        print(image)
-        print(type(image))
-
 
         imgur_response = requests.post(
             f'{IMGUR_API_URL}/image',
@@ -45,8 +42,6 @@ class UserImageUploadView(APIView):
         )
 
         if imgur_response.status_code >= 400:
-            print(imgur_response.status_code)
-            print(imgur_response.json())
             return Response({'error': 'Image upload failed'}, status=400)
 
         imgur_response_data = imgur_response.json()
