@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
+   # "rest_framework_filters",
     'drf_yasg',
     'book',
     'authentication',
@@ -146,4 +147,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'authentication.User'
+
+BOOK_API_URL = 'https://www.googleapis.com/books/v1'
+API_SECRET_KEY = 'AIzaSyBK98-rnPGaQO7Nrm8ZSMDnuHOj4QkvQF0'
+# 'volumes?q=flowers+inauthor:keyes&key=AIzaSyBK98-rnPGaQO7Nrm8ZSMDnuHOj4QkvQF0'
 
