@@ -2,7 +2,16 @@ from enum import unique
 from rest_framework import serializers
 from rest_framework.validators import UniqueTogetherValidator
 
-from .models import User
+from .models import User, UserProfileImage
+
+class UserProfileImageSerializer(serializers.Serializer):
+    id = serializers.UUIDField(read_only=True)
+    url = serializers.CharField(max_length=255, read_only=True)
+    delete_hash = serializers.CharField(max_length=255, read_only=True)
+
+    class Meta:
+        model = UserProfileImage
+        fields = ['id', 'url', 'delete_hash']
 
 class UserSerializer(serializers.Serializer):
     id = serializers.UUIDField(read_only=True)
@@ -12,6 +21,7 @@ class UserSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=255, required=True, write_only=True)
     latitude = serializers.DecimalField(max_digits=9, decimal_places=6, required=True)
     longitude = serializers.DecimalField(max_digits=9, decimal_places=6, required=True)
+    profile_image = UserProfileImageSerializer(required=False, read_only=True)
 
     class Meta:
         model = User
