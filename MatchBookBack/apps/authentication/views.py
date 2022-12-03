@@ -42,6 +42,8 @@ class UserImageUploadView(APIView):
         )
 
         if imgur_response.status_code >= 400:
+            print(f'status code: {imgur_response.status_code}')
+            print(imgur_response.json())
             return Response({'error': 'Image upload failed'}, status=400)
 
         imgur_response_data = imgur_response.json()
