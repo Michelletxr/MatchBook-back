@@ -10,6 +10,7 @@ python-dotenv = "*"
 djangorestframework-simplejwt = "*"
 drf-yasg = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 
