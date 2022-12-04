@@ -15,6 +15,5 @@ def format_data(data):
 def get_books_from_name(name):
     req = requests.get(f"{settings.BOOK_API_URL}/volumes?q={name}"
                        f"&projection=lite"
-                       f"&maxResults=5"
                        f"&key={settings.API_SECRET_KEY}")
     return req

@@ -3,6 +3,7 @@
 def generate_book_format(book):
     info = book['volumeInfo']
     book_format = {
+        'id': info.get(id),
         'title': info.get('title'),
         'authors': info.get('authors'),
         'publishedDate': info.get('publishedDate'),
