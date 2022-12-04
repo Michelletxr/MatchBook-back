@@ -11,6 +11,7 @@ class Book(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name = _('Usuário'))
     lauch_date = models.DateTimeField()
     sinopse = models.TextField()
+    imageLinks = models.TextField()
 
     class Meta: 
         app_label = 'book'
