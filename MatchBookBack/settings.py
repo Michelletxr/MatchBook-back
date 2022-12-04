@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-yg((1)%d4)fp)hkj&ta&^j#2r%9drd4pvn)6#qej4_e&s+7)1m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['192.168.100.22', '192.168.0.14']
 
 
 # Application definition
@@ -35,10 +35,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'rest_framework',
     'rest_framework_simplejwt',
+   # "rest_framework_filters",
     'drf_yasg',
+    'book',
     'whitenoise.runserver_nostatic',  
 
     'authentication',
@@ -154,3 +155,8 @@ STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'authentication.User'
+
+BOOK_API_URL = 'https://www.googleapis.com/books/v1'
+API_SECRET_KEY = 'AIzaSyBK98-rnPGaQO7Nrm8ZSMDnuHOj4QkvQF0'
+# 'volumes?q=flowers+inauthor:keyes&key=AIzaSyBK98-rnPGaQO7Nrm8ZSMDnuHOj4QkvQF0'
+
