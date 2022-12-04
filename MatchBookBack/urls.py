@@ -17,5 +17,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/authentication/', include('authentication.urls')),
     path('api/chat/', include('chat.urls')),
+     path('api/book/', include('book.urls')),
     re_path(r'^swagger/$', schema_view.with_ui('swagger')),
 ]
