@@ -19,8 +19,8 @@ class UserSerializer(serializers.Serializer):
     last_name = serializers.CharField(max_length=255, required=True)
     email = serializers.EmailField(max_length=255, required=True)
     password = serializers.CharField(max_length=255, required=True, write_only=True)
-    latitude = serializers.DecimalField(max_digits=9, decimal_places=6, required=True)
-    longitude = serializers.DecimalField(max_digits=9, decimal_places=6, required=True)
+    latitude = serializers.DecimalField(max_digits=12, decimal_places=9, required=True)
+    longitude = serializers.DecimalField(max_digits=12, decimal_places=9, required=True)
     profile_image = UserProfileImageSerializer(required=False, read_only=True)
 
     class Meta:
