@@ -6,7 +6,7 @@ from .models import Book
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
-        fields = ['id', 'name', 'user', 'author', 'lauch_date', 'sinopse']
+        fields = ['id', 'name', 'user', 'author', 'lauch_date', 'sinopse', 'imageLinks']
         read_only_fields = ("created_at", "updated_at")
 
 class BooksByUser(serializers.ManyRelatedField):
