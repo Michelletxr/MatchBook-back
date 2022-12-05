@@ -20,8 +20,8 @@ class User(AbstractBaseUser, BaseModel):
     last_name = models.CharField(max_length=255, verbose_name='Sobrenome')
     email = models.EmailField(max_length=255, unique=True, verbose_name='E-mail')
     password = models.CharField(max_length=255, verbose_name='Senha')
-    latitude = models.DecimalField(max_digits=9, decimal_places=6, verbose_name='Latitude')
-    longitude = models.DecimalField(max_digits=9, decimal_places=6, verbose_name='Longitude')
+    latitude = models.DecimalField(max_digits=12, decimal_places=9, verbose_name='Latitude')
+    longitude = models.DecimalField(max_digits=12, decimal_places=9, verbose_name='Longitude')
     profile_image = models.ForeignKey(UserProfileImage, on_delete=models.CASCADE, null=True, blank=True)
 
     objects = UserManager()
